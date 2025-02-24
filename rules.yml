@@ -1,0 +1,58 @@
+version: "3.1"
+
+rules:
+
+
+#- rule: Ответ на приветствие
+#  steps:
+#    - intent: greet
+#    - action: utter_greet
+
+#- rule: Ответ на прощание
+#  steps:
+#    - intent: goodbye
+#    - action: utter_goodbye
+
+##- rule: Проверка кандидата
+##  steps:
+##   - action: action_check_candidate
+##   - action: utter_result
+
+##- rule: Спросить про опыт после роли
+##  steps:
+##   - intent: provide_role
+##   - action: utter_ask_experience
+
+#- rule: Запуск формы кандидата
+#  steps:
+#   - intent: provide_name
+#   - action: candidate_form
+#   - active_loop: candidate_form
+
+#- rule: Завершение формы кандидата
+#  condition:
+#   - active_loop: candidate_form
+#  steps:
+#   - action: candidate_form
+#   - active_loop: null
+#   - action: utter_info_candidate
+#   - action: action_check_candidate
+#   - action: utter_result
+
+- rule: Запуск формы кандидата
+  steps:
+    - intent: provide_name
+    - action: candidate_form
+    - active_loop: candidate_form
+
+- rule: Завершение формы кандидата
+  condition:
+    - active_loop: candidate_form
+  steps:
+    - action: candidate_form
+    - active_loop: null
+    - action: utter_info_candidate
+    - action: action_check_candidate
+    - action: utter_result
+
+

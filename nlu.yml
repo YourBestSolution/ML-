@@ -1,0 +1,145 @@
+version: "3.1"
+
+nlu:
+
+- regex: name
+  examples: |
+    [a-zA-Zа-яА-Я]+
+
+- regex: age
+  examples: |
+   \d{2,3}
+
+- regex: experience
+  examples: |
+   \d+(\.\d+)?
+
+- regex: salary_expectation
+  examples: |
+   (?:(\d{1,3}(?:[ ,\.]\d{3})*)|\b\d+\b)(?:\s*(?:тыс(?:ячи)?|к|млн|руб)?\.?\s*(?:\d{2})?|(?<=\d)(тыс(?:ячи)?|к|млн|руб))?(?:[ ,]\d{2})?(?:\s?руб\.?)?
+
+
+- synonym: Project Manager
+  examples: |
+   - PM
+   - Project Lead
+   - Руководитель проекта
+
+- synonym: Data Analyst
+  examples: |
+   - Аналитик данных
+   - DA
+   - Data Researcher
+
+- synonym: Python
+  examples: |
+   - Питон
+   - Python3
+   - Py
+
+- intent: greet
+  examples: |
+   - Привет
+   - Здравствуйте
+   - Добрый день
+   - Приветствую
+
+- intent: goodbye
+  examples: |
+   - До свидания
+   - Пока
+   - Всего доброго
+   - Удачи
+
+- intent: provide_name
+  examples: |
+   - Меня зовут [Иван](name)
+   - Мое имя [Мария](name)
+   - Я [Андрей](name)
+   - [Иван](name)
+   - [Мария](name)
+   - [Софья](name)
+   - [Андрей](name)
+   - Меня зовут [Анна](name)
+   - Я [Александр](name)
+   - Мое имя [Елена](name)
+   - Здравствуйте, меня зовут [Дмитрий](name)
+   - Я [Наталья](name)
+   - Меня зовут [Сергей](name)
+   - Я [Ксения](name)
+   - Меня зовут [Денис](name)
+   - Мене зовут [Татьяна](name)
+   - Я [Максим](name)
+   - Зовут меня [Ольга](name)
+   - Я [Анастасия](name)
+   - Меня зовут [Роман](name)
+   - Я [Екатерина](name)
+   - Мое имя [Владимир](name)
+   - Здравствуйте, я [Юлия](name)
+   - Меня зовут [Артем](name)
+   - Я [Светлана](name)
+   - Меня зовут [Павел](name)
+   - Я [Вероника](name)
+   - Мое имя [Глеб](name)
+   - Я [София](name)
+
+- intent: provide_age
+  examples: |
+   - Мне [18](age)
+   - Мне [18](age) лет
+   - [18](age)
+   - [20](age) лет
+
+- intent: provide_experience
+  examples: |
+   - У меня [3](experience) года опыта
+   - Я работаю [2](experience) года
+   - Меньше [1](experience) года
+   - [2](experience) года
+   - [5](experience) лет
+
+- intent: provide_role
+  examples: |
+   - Я хочу податься на [Data Scientist](role)
+   - Интересует вакансия [MLOps Engineer](role)
+   - Думаю попробовать себя в [Data Analyst](role)
+   - Я разработчик, но хочу стать [ML Engineer](role)
+   - Мне нравится роль [Product Manager](role)
+   - Не знаю, какая роль мне подходит
+   - [Software Engineer](role)
+   - [BI-аналитик](role)
+   - [ML Researcher](role)
+   - [Data Engineer](role)
+
+- intent: provide_skills
+  examples: |
+   - Я знаю [Python](skills), [Pandas](skills) и [TensorFlow](skills)
+   - Умею работать с [SQL](skills) и [BI-инструментами](skills)
+   - Опыт работы с [Docker](skills) и [Kubernetes](skills)
+   - Хорошо разбираюсь в [BigQuery](skills) и [Airflow](skills)
+   - Владею [SQL](skills), [Excel](skills) и [Power BI](skills)
+   - [Java](skills), [Spring](skills), [PostgreSQL](skills)
+   - [Linux](skills), [Bash](skills), [CI/CD](skills)
+   - Мой стек: [C++](skills), [PyTorch](skills), [OpenCV](skills)
+   - Использовал [Hadoop](skills) и [Spark](skills)
+   - [FastAPI](skills), [Django](skills), [Flask](skills)
+   - [Python](skills), [Pandas](skills), [sql](skills), [BI](skills)
+
+- intent: provide_salary
+  examples: |
+   - Хочу зарплату от [150000](salary_expectation) рублей
+   - Меня устраивает [120000](salary_expectation) рублей в месяц
+   - Хочу зарплату от [150000 тысяч](salary_expectation) рублей
+   - Меня устраивает [120000 тыщ](salary_expectation) рублей в месяц
+   - [200.000](salary_expectation) рублей минимум
+   - [200000](salary_expectation)
+   - [200 000](salary_expectation)
+   - [150000](salary_expectation) рублей
+   - [120000](salary_expectation) рублей минимум
+   - Меня устроит [250000](salary_expectation)
+   - Хочу от [300000](salary_expectation) рублей
+   - [500000](salary_expectation)
+   - [75000](salary_expectation) рублей
+   - Где-то [170000](salary_expectation) рублей
+   - Хочу ЗП [100 тысяч] (salary_expectation)
+   - Хочу получать [100 тысяч] (salary_expectation)

@@ -1,0 +1,50 @@
+#version: "3.1"
+
+#stories:
+
+  
+#- story: Сбор информации о кандидате
+#  steps:
+#    - intent: greet
+#    - action: utter_greet
+#    - intent: provide_name
+#    - slot_was_set:
+#        - name
+#    - action: utter_ask_age
+#    - intent: provide_age
+#    - slot_was_set:
+#        - age
+#    - action: utter_ask_role
+#    - intent: provide_role
+#    - slot_was_set:
+#        - role
+#    - action: utter_ask_experience
+#    - intent: provide_experience
+#    - slot_was_set:
+#        - experience
+#    - action: utter_ask_skills
+#    - intent: provide_skills
+#    - slot_was_set:
+#        - skills
+#    - action: utter_ask_salary_expectation
+#    - intent: provide_salary
+#    - slot_was_set:
+#        - salary_expectation
+#    - action: utter_info_candidate
+#    - action: action_check_candidate
+#    - action: utter_result
+#    - intent: goodbye
+#    - action: utter_goodbye
+
+version: "3.1"
+
+stories:
+- story: Сбор информации о кандидате
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: provide_name
+    - slot_was_set:
+        - name
+    - action: candidate_form
+    - active_loop: candidate_form
